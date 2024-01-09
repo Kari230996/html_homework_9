@@ -307,8 +307,35 @@ li a {
     align-items: center;
     height: 260px;
     background-size: cover;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
     
   }
+
+  .smallRect a {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+.smallRect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease; 
+}
+
+.smallRect:hover::before {
+    background-color: rgba(0, 0, 0, 0.332);
+}
+
+
 
 .largeRect {
 
@@ -321,8 +348,33 @@ li a {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
     
 
+}
+
+.largeRect a {
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+.largeRect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease; 
+}
+
+.largeRect:hover::before {
+    background-color: rgba(0, 0, 0, 0.332);
 }
 
 
@@ -671,24 +723,24 @@ a h1 {
 
 .subscribe-form {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .subscribe-input {
+    flex: 1;
     padding: 10px;
-    margin-bottom: 10px;
     width: 200px;
     border: 1px solid #ccc;
-    border-radius: 10px; 
+    border-radius: 20px 0 0 20px; 
 }
 
 .submit-button {
+
     padding: 10px 20px;
     color: #fff;
     background-color: rgba(241, 109, 127, 1);
     border: none;
-    border-radius: 10px;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: Lato;
@@ -765,7 +817,8 @@ a h1 {
 
     }
     .smallRect {
-        flex: 0 0 calc(33.33% - 20px);  
+        flex: 0 0 calc(33.33% - 20px);
+
     }
 
     .smallRect img,
